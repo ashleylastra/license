@@ -17,18 +17,15 @@ include 'libs/css/main.css';
 				if(isset($_POST['search'])) {
 				    $valueToSearch = $_POST['valueToSearch'];
 				    $query = "SELECT * FROM  `product` WHERE CONCAT(`manufacturer`) LIKE '%".$valueToSearch."%'";
-				    $search_result = filterTable($query);
+				    #$search_result = filterTable($query);
+				    $search_result = find_by_sql($query);
 				}
 				else {
 				   $query = "SELECT * FROM `product`";
-				    $search_result = filterTable($query);
+				    #$search_result = filterTable($query);
+				    $search_result = find_by_sql($query);
 				}
 				
-				function filterTable($query){
-				    $connect = mysqli_connect("localhost", "root", "Wally13!", "inventorymanager");
-				    $filter_result = mysqli_query($connect, $query);
-				    return $filter_result;
-				}
 				?>
 				
 <?php include_once('layouts/header.php'); ?>
