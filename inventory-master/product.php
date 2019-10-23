@@ -18,8 +18,10 @@ include 'libs/css/main.css';
 				    $valueToSearch = $_POST['valueToSearch'];
 				    $query = "SELECT * FROM  `product` WHERE CONCAT(`manufacturer`) LIKE '%".$valueToSearch."%'";
 				    $search_result = $db->query($query);
+				}
 				else {
-				   $query = "SELECT * FROM `product`";
+				     
+					$query = "SELECT * FROM `product`";
 				   $search_result = $db->query($query);
 				}
 				
