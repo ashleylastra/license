@@ -14,13 +14,13 @@ $user = find_by_userprod_id('user_info', (int)$_GET['id']);
   }*/
 ?>
 <?php
-$con=mysqli_connect("localhost","root","","inventorymanager");
 $query = "SELECT * FROM user_info, product WHERE product.product_id = user_info.product_id AND product.product_id ='{$product['product_id']}'";
-$result=mysqli_query($con, $query);
+$result=$db->query($query);
+//mysqli_query($con, $query);
 $row = mysqli_num_rows($result);
 
 if ($row==0) {
-    $sql = "DELETE FROM product WHERE product.product_id = '{$product['product_id']}'";
+    $sql = "DELETE FROM product WHERE product_id = '{$product['product_id']}'";
     $result = $db->query($sql);
     
 } else {

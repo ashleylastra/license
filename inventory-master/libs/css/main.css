@@ -9,9 +9,10 @@ body{
 }
 
 tbody {
-    display:block;
+    display:inline-block;
     height:500px;
     overflow:auto;
+    width:auto;
 }
 thead, tbody tr {
     display:table;
@@ -19,7 +20,8 @@ thead, tbody tr {
     table-layout:fixed;  
 }
 thead {
-    width: calc(100% - 1em );
+	width: calc(100% - 1em);
+    
 }
 
 }a{
